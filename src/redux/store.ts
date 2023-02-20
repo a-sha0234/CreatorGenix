@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./personalData";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { personalData: counterReducer },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
