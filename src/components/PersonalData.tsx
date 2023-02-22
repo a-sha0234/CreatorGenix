@@ -45,8 +45,8 @@ const PersonalData = () => {
 
   return (
     <>
-      <h2>Personal Data</h2>
-      <h1>{count.name}</h1>
+      <h1>Personal Data</h1>
+      {/* <h1>{count.name}</h1> */}
       <form>
         <input type="text" name="name" onChange={handleNameChange}></input>
         <input
@@ -74,7 +74,6 @@ const PersonalData = () => {
           name=" profileDescription"
           onChange={handleProfileChange}
         ></textarea>
-        {/* <button>Submit</button> */}
       </form>
     </>
   );
