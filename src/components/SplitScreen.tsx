@@ -26,7 +26,6 @@ const SplitScreen: React.FC<Iprops> = ({
   leftWeight,
   rightWeight,
 }) => {
-  console.log(children);
   const [left, right] = children;
   return (
     <Container>

@@ -46,7 +46,7 @@ const PersonalData = () => {
   return (
     <>
       <h1>Personal Data</h1>
-      {/* <h1>{count.name}</h1> */}
+
       <form>
         <input type="text" name="name" onChange={handleNameChange}></input>
         <input
