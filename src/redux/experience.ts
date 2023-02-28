@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { act } from "@testing-library/react";
+import { v4 as uuidv4 } from "uuid";
 
 interface ExperienceState {
   form: ExperienceFormData[];
@@ -12,6 +12,7 @@ interface ExperienceFormData {
   responsibilities: string;
   startDate: string;
   endDate: string;
+  uuid: any;
 }
 
 const initialState: ExperienceState = {
@@ -22,6 +23,7 @@ const initialState: ExperienceState = {
       responsibilities: "",
       startDate: "",
       endDate: "",
+      uuid: uuidv4(),
     },
   ],
 };
@@ -30,29 +32,33 @@ export const expierienceSlice = createSlice({
   name: "experience",
   initialState,
   reducers: {
-    addForm: (state) => {
+    addForm: (state, action) => {
       state.form.push({
         companyName: "",
         position: "",
         responsibilities: "",
         startDate: "",
         endDate: "",
+        uuid: action.payload,
       });
     },
 
     updateForm: (state, action) => {
-      const { index, field, value } = action.payload;
-      const updatedFormData = {
-        ...state.form[index],
-        [field]: value,
-      };
-      const updatedForm = [...state.form];
-      updatedForm[index] = updatedFormData;
-      state.form = updatedForm;
+      let { id, field, value } = action.payload;
+      for (let i = 0; i < state.form.length; i++) {
+        if (state.form[i].uuid == id) {
+          const updatedFormData = { ...state.form[i], [field]: value };
+          const updatedForm = [...state.form];
+          updatedForm[i] = updatedFormData;
+          state.form = updatedForm;
+        }
+      }
     },
+
     deleteForm: (state, action) => {
-      // using filter works rather than splice() as indecies of items updates in filter as it creates a new array
-      state.form = state.form.filter((_, index) => index !== action.payload);
+      state.form = state.form.filter(
+        (data, index) => data.uuid != action.payload
+      );
     },
   },
 });

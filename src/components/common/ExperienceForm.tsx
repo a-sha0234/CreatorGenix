@@ -1,17 +1,22 @@
 import * as React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateForm, deleteForm } from "../../redux/experience";
+import { store, RootState } from "../../redux/store";
+import { useState, useEffect } from "react";
 interface Iprops {
   formkey: number;
+  data: any;
+  key: number;
 }
 
-const ExperienceForm: React.FC<Iprops> = ({ formkey }) => {
+const ExperienceForm: React.FC<Iprops> = ({ formkey, data, key }) => {
   const dispatch = useDispatch();
+  const experiences = useSelector((state: RootState) => state.experienceData);
 
   function handleChange(e: any) {
     dispatch(
       updateForm({
-        index: formkey,
+        id: data.uuid,
         value: e.currentTarget.value,
         field: e.currentTarget.name,
       })
@@ -19,11 +24,10 @@ const ExperienceForm: React.FC<Iprops> = ({ formkey }) => {
   }
 
   function handleDelete(e: any) {
-    console.log(e.currentTarget.id);
-    dispatch(deleteForm(Number(e.currentTarget.id)));
-  }
+    console.log(data.uuid);
 
-  // console.log(formkey);
+    dispatch(deleteForm(data.uuid));
+  }
 
   return (
     <div>
@@ -35,7 +39,7 @@ const ExperienceForm: React.FC<Iprops> = ({ formkey }) => {
         <input onChange={handleChange} name="endDate"></input>
       </form>
 
-      <button onClick={handleDelete} id={`${formkey}`}>
+      <button onClick={handleDelete} id={`${data.uuid}`}>
         Delete
       </button>
     </div>
