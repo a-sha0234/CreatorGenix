@@ -6,10 +6,9 @@ import { useState, useEffect } from "react";
 interface Iprops {
   formkey: number;
   data: any;
-  key: number;
 }
 
-const ExperienceForm: React.FC<Iprops> = ({ formkey, data, key }) => {
+const ExperienceForm: React.FC<Iprops> = ({ formkey, data }) => {
   const dispatch = useDispatch();
   const experiences = useSelector((state: RootState) => state.experienceData);
 
@@ -22,6 +21,8 @@ const ExperienceForm: React.FC<Iprops> = ({ formkey, data, key }) => {
       })
     );
   }
+
+  console.log(formkey);
 
   function handleDelete(e: any) {
     console.log(data.uuid);

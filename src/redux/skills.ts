@@ -1,0 +1,58 @@
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
+
+// interface ExperienceState {
+//   form: ExperienceFormData[];
+// }
+
+// interface ExperienceFormData {
+//   skill: any;
+//   uuid: any;
+// }
+
+// const initialState: ExperienceState = {
+//   form: [],
+// };
+
+export const skillSlice = createSlice({
+  name: "skills",
+  initialState: [],
+  reducers: {
+    // addForm: (state, action) => {
+    //   state.form.push({
+    //     companyName: "",
+    //     position: "",
+    //     responsibilities: "",
+    //     startDate: "",
+    //     endDate: "",
+    //     uuid: action.payload,
+    //   });
+    // },
+    // updateForm: (state, action) => {
+    //   let { id, field, value } = action.payload;
+    //   for (let i = 0; i < state.form.length; i++) {
+    //     if (state.form[i].uuid == id) {
+    //       const updatedFormData = { ...state.form[i], [field]: value };
+    //       const updatedForm = [...state.form];
+    //       updatedForm[i] = updatedFormData;
+    //       state.form = updatedForm;
+    //     }
+    //   }
+    // },
+    // deleteForm: (state, action) => {
+    //   state.form = state.form.filter(
+    //     (data, index) => data.uuid != action.payload
+    //   );
+    // },
+
+    addSkill: (state, action) => {},
+    updateSkill: (state, action) => {},
+    deleteSkill: (state, action) => {},
+  },
+});
+
+// Action creators are generated for each case reducer function
+export const { addSkill, updateSkill, deleteSkill } = skillSlice.actions;
+
+export default skillSlice.reducer;
