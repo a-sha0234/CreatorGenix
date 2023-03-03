@@ -33,11 +33,31 @@ const ExperienceForm: React.FC<Iprops> = ({ formkey, data }) => {
   return (
     <div>
       <form>
-        <input onChange={handleChange} name="companyName"></input>
-        <input onChange={handleChange} name="position"></input>
-        <textarea onChange={handleChange} name="responsibilities"></textarea>
-        <input onChange={handleChange} name="startDate"></input>
-        <input onChange={handleChange} name="endDate"></input>
+        <input
+          onChange={handleChange}
+          name="companyName"
+          value={experiences.form[formkey].companyName}
+        ></input>
+        <input
+          onChange={handleChange}
+          name="position"
+          value={experiences.form[formkey].position}
+        ></input>
+        <textarea
+          onChange={handleChange}
+          name="responsibilities"
+          value={experiences.form[formkey].responsibilities}
+        ></textarea>
+        <input
+          onChange={handleChange}
+          name="startDate"
+          value={experiences.form[formkey].startDate}
+        ></input>
+        <input
+          onChange={handleChange}
+          name="endDate"
+          value={experiences.form[formkey].endDate}
+        ></input>
       </form>
 
       <button onClick={handleDelete} id={`${data.uuid}`}>

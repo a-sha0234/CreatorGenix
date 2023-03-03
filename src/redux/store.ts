@@ -3,12 +3,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./personalData";
 import education from "../redux/education";
 import experienceReducer from "../redux/experience";
+import skillsReducer from "../redux/skills";
 
 export const store = configureStore({
   reducer: {
     personalData: counterReducer,
     educationData: education,
     experienceData: experienceReducer,
+    skillData: skillsReducer,
   },
 });
 
