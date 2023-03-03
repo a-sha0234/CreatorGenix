@@ -48,16 +48,23 @@ const PersonalData = () => {
       <h1>Personal Data</h1>
 
       <form>
-        <input type="text" name="name" onChange={handleNameChange}></input>
+        <input
+          type="text"
+          name="name"
+          onChange={handleNameChange}
+          placeholder="john"
+        ></input>
         <input
           type="text"
           name="lastName"
           onChange={handleLastNameChange}
+          placeholder="ie: Doe"
         ></input>
         <input
           type="text"
           name="location"
           onChange={handleLocationChange}
+          placeholder=""
         ></input>
         <input
           type="text"
