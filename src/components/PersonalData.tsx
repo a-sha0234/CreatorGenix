@@ -64,22 +64,30 @@ const PersonalData = () => {
           type="text"
           name="location"
           onChange={handleLocationChange}
-          placeholder=""
+          placeholder="ie Paris"
         ></input>
         <input
           type="text"
           name="website"
           onChange={handleWebsiteChange}
+          placeholder="website"
         ></input>
-        <input type="email" name="email" onChange={handleEmailChange}></input>
         <input
-          type="text"
+          type="email"
+          name="email"
+          onChange={handleEmailChange}
+          placeholder="ie: johnDoe@hotmail.com"
+        ></input>
+        <input
+          type="number"
           name="phoneNumber"
           onChange={handlePhoneNumberChange}
+          placeholder="ie: 09390434510"
         ></input>
         <textarea
           name=" profileDescription"
           onChange={handleProfileChange}
+          placeholder="description"
         ></textarea>
       </form>
     </>
