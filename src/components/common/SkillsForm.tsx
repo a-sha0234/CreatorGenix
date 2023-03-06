@@ -25,6 +25,7 @@ const SkillsForm: React.FC<Iprops> = ({ id, formKey }) => {
           name="skill"
           value={skills.form[formKey].skill}
           onChange={handleSkillChange}
+          placeholder="skill"
         ></input>
       </form>
       <button onClick={handleDeleteSkill}>Delete</button>

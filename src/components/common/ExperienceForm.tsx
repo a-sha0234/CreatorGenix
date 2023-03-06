@@ -37,26 +37,31 @@ const ExperienceForm: React.FC<Iprops> = ({ formkey, data }) => {
           onChange={handleChange}
           name="companyName"
           value={experiences.form[formkey].companyName}
+          placeholder="company name"
         ></input>
         <input
           onChange={handleChange}
           name="position"
           value={experiences.form[formkey].position}
+          placeholder="job title"
         ></input>
         <textarea
           onChange={handleChange}
           name="responsibilities"
           value={experiences.form[formkey].responsibilities}
+          placeholder="responsibilites "
         ></textarea>
         <input
           onChange={handleChange}
           name="startDate"
           value={experiences.form[formkey].startDate}
+          placeholder="start data"
         ></input>
         <input
           onChange={handleChange}
           name="endDate"
           value={experiences.form[formkey].endDate}
+          placeholder="end date"
         ></input>
       </form>
 

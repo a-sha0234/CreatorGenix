@@ -1,20 +1,21 @@
 import Header from "./RightSideComp/Header";
-import "../style/rightHandComp/main.scss";
-import styled from "styled-components";
+// import "../style/rightHandComp/main.scss";
 import Contact from "./RightSideComp/Contact";
-
-const Container = styled.div`
-  position: fixed;
-`;
+import Profile from "./RightSideComp/Profile";
+import ProfessionalExp from "./RightSideComp/ProfessionalExp";
+import Education from "./RightSideComp/Education";
+import Skills from "./RightSideComp/Skills";
 
 const RightHandComponent = () => {
   return (
-    <Container className="right">
-      <div id="content">
-        <Header />
-        <Contact />
-      </div>
-    </Container>
+    <div id="content">
+      <Header />
+      <Contact />
+      <Profile />
+      <ProfessionalExp />
+      <Education />
+      <Skills />
+    </div>
   );
 };
 

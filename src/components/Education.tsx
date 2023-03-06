@@ -47,21 +47,40 @@ export default function Education() {
           type="text"
           name="universityNames"
           onChange={setUniversityNames}
+          placeholder="university name"
         ></input>
-        <input name="universityCourse" onChange={setUniversityCourses}></input>
-        <input name="universityGrade" onChange={setUniversityGrades}></input>
+        <input
+          name="universityCourse"
+          onChange={setUniversityCourses}
+          placeholder="course"
+        ></input>
+        <input
+          name="universityGrade"
+          onChange={setUniversityGrades}
+          placeholder="grade"
+        ></input>
         <input
           name="yearOfGraduation"
           onChange={setUniversityyearOfGraduations}
+          placeholder="graduation date"
         ></input>
       </form>
       <h2>School</h2>
       <form>
-        <input name="schoolName" onChange={setSchoolNames}></input>
-        <input name="schoolCourse" onChange={setSchoolCourses}></input>
+        <input
+          name="schoolName"
+          onChange={setSchoolNames}
+          placeholder="Name of school"
+        ></input>
+        <input
+          name="schoolCourse"
+          onChange={setSchoolCourses}
+          placeholder="courses"
+        ></input>
         <input
           name="yearOfGraduation"
           onChange={setSchoolyearOfGraduations}
+          placeholder="finish date"
         ></input>
       </form>
     </div>
