@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <div>
-      <SplitScreen leftWeight={1} rightWeight={1}>
+      <SplitScreen leftWeight={1} rightWeight={2}>
         <LeftHandComponent />
         <RightHandComponent />
       </SplitScreen>

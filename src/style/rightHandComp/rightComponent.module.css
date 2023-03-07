@@ -1,0 +1,18 @@
+#content {
+  background-color: blueviolet;
+  min-height: 100%;
+}
+
+.cv {
+  background-color: aqua;
+  border-radius: 15px;
+  /* margin: 10%; */
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  min-width: 80%;
+}
+
+.cv__content {
+  background-color: orange;
+}

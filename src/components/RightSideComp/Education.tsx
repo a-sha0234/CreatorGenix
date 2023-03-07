@@ -6,6 +6,7 @@ export default function Education() {
   return (
     <div>
       <article>
+        <h2>Education</h2>
         <p>{Education.university.universityName}</p>
         <p>{Education.university.universityCourse}</p>
         <p>{Education.university.universityGrade}</p>

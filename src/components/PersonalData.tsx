@@ -88,6 +88,7 @@ const PersonalData = () => {
           name=" profileDescription"
           onChange={handleProfileChange}
           placeholder="description"
+          style={{ resize: "none", overflowY: "scroll" }}
         ></textarea>
       </form>
     </>
