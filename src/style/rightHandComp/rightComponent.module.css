@@ -6,13 +6,42 @@
 .cv {
   background-color: aqua;
   border-radius: 15px;
-  /* margin: 10%; */
+  margin: 10%;
   height: 80vh;
   display: flex;
   justify-content: center;
-  min-width: 80%;
+  width: 80%;
+  margin: auto;
 }
 
 .cv__content {
   background-color: orange;
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "header header" "contact contact" "education profile" "skills experiance" "skills experiance";
+}
+.header {
+  grid-area: header;
+}
+
+.contact {
+  grid-area: contact;
+}
+
+.profile {
+  grid-area: profile;
+}
+
+.experiance {
+  grid-area: experiance;
+}
+
+.education {
+  grid-area: education;
+}
+
+.skills {
+  grid-area: skills;
 }

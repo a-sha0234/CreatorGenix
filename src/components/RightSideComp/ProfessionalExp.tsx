@@ -9,6 +9,7 @@ export default function ProfessionalExp() {
       {Experiance.form.map((data) => {
         return (
           <div>
+            <h2>Professional experience</h2>
             <p>{data.companyName}</p>
             <p>{data.position}</p>
             <p>{data.startDate}</p>

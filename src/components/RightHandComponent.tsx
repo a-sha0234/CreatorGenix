@@ -12,22 +12,22 @@ const RightHandComponent = () => {
     <div id="content" style={styles}>
       <main className={styles.cv}>
         <section className={styles.cv__content}>
-          <article>
+          <article className={styles.header}>
             <Header />
           </article>
-          <article>
+          <article className={styles.contact}>
             <Contact />
           </article>
-          <article>
+          <article className={styles.profile}>
             <Profile />
           </article>
-          <article>
+          <article className={styles.experiance}>
             <ProfessionalExp />
           </article>
-          <article>
+          <article className={styles.education}>
             <Education />
           </article>
-          <article>
+          <article className={styles.skills}>
             <Skills />
           </article>
           {/* <Right /> */}

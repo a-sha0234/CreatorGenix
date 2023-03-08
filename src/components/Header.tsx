@@ -5,35 +5,66 @@ import { useDispatch, useSelector } from "react-redux";
 import { store, RootState } from "../redux/store";
 
 const Header = () => {
+  // const generatePDF = (): void => {
+  //   const content = document.getElementById("content");
+
+  //   if (content !== null) {
+  //     html2canvas(content, {}).then((canvas) => {
+  //       const imgData = canvas.toDataURL("image/png");
+  //       const pdf = new jsPDF({
+  //         orientation: "portrait",
+  //       });
+  //       const imgProps = pdf.getImageProperties(imgData);
+  //       const pdfWidth = pdf.internal.pageSize.getWidth();
+  //       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+  //       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  //       pdf.save("download.pdf");
+  //     });
+  //   } else {
+  //     console.error("Could not find content element");
+  //   }
+  // };
+
   const generatePDF = (): void => {
     const content = document.getElementById("content");
 
     if (content !== null) {
-      html2canvas(content, {
-        scale: 2,
-        useCORS: true,
-        scrollX: -window.scrollX,
-        scrollY: -window.scrollY,
-        windowWidth: document.documentElement.offsetWidth,
-        windowHeight: document.documentElement.offsetHeight,
-        width: content.offsetWidth,
-        height: content.offsetHeight,
-        allowTaint: true,
-      }).then((canvas) => {
-        const pdf = new jsPDF("p", "in", "letter");
-
-        const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      html2canvas(content, { scale: 2 }).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF({
+          orientation: "portrait",
+          unit: "pt",
+          format: "a4",
+        });
         const imgProps = pdf.getImageProperties(imgData);
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
-        pdf.save("CV.pdf");
+        pdf.addImage(
+          imgData,
+          "PNG",
+          0, // x-coordinate
+          0, // y-coordinate
+          pdfWidth, // width
+          pdfHeight // height
+        );
+        pdf.save("download.pdf");
       });
     } else {
       console.error("Could not find content element");
     }
   };
+
+  // function generatePDF() {
+  //   const doc = new jsPDF({ unit: "pt" }); // create jsPDF object
+  //   const pdfElement: any = document.getElementById("content"); // HTML element to be converted to PDF
+
+  //   doc.html(pdfElement, {
+  //     callback: (pdf) => {
+  //       pdf.save("MyPdfFile.pdf");
+  //     },
+
+  //     // optional: other HTMLOptions
+  //   });
 
   function handleAutoFill() {}
 
