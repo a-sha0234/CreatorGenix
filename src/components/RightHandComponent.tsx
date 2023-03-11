@@ -4,7 +4,6 @@ import Profile from "./RightSideComp/Profile";
 import ProfessionalExp from "./RightSideComp/ProfessionalExp";
 import Education from "./RightSideComp/Education";
 import Skills from "./RightSideComp/Skills";
-// import Right from "./RightSideComp/Right";
 import styles from "../style/rightHandComp/rightComponent.module.css";
 
 const RightHandComponent = () => {

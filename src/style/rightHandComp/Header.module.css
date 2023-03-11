@@ -1,0 +1,8 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.name h1 {
+  font-size: 3rem;
+}

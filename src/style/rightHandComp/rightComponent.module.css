@@ -1,47 +1,57 @@
+:root {
+  --margin: 4%;
+}
+
 #content {
   background-color: blueviolet;
-  /* min-height: 100%; */
 }
 
 .cv {
   background-color: aqua;
-  border-radius: 15px;
-  /* margin: 10%; */
-  /* height: 100vh; */
-  display: flex;
-  justify-content: center;
-  /* width: 100%; */
-  /* margin: auto; */
 }
 
 .cv__content {
   background-color: orange;
-  min-width: 100%;
+  /* min-width: 100%; */
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: "header header" "contact contact" "education profile" "skills experiance" "skills experiance";
+  grid-template-columns: 40% 60%;
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-template-rows: 10% 8% 1fr 2fr;
+  grid-template-areas: "header header" "contact contact" "education profile" "skills experiance";
+  height: 100vh;
 }
 .header {
   grid-area: header;
+  margin: var(--margin);
 }
 
 .contact {
   grid-area: contact;
+  margin: var(--margin);
 }
 
 .profile {
   grid-area: profile;
+  margin: var(--margin);
 }
 
 .experiance {
   grid-area: experiance;
+  margin: var(--margin);
 }
 
 .education {
   grid-area: education;
+  margin: var(--margin);
 }
 
 .skills {
   grid-area: skills;
+  margin: var(--margin);
 }
+
+/* @media only screen and (max-width: 1100px) {
+  .cv {
+    display: none;
+  }
+} */
