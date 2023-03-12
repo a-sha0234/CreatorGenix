@@ -5,4 +5,17 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: black;
+}
+
+.previewFalse {
+  display: none;
+}
+
 /*media query */
+@media only screen and (max-width: 600px) {
+  .previewFalse {
+    display: block;
+  }
+}

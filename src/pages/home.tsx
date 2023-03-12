@@ -3,6 +3,7 @@ import SplitScreen from "../components/SplitScreen";
 import RightHandComponent from "../components/RightHandComponent";
 import LeftHandComponent from "../components/LeftHandComponent";
 import { useState } from "react";
+import styles from "../style/pages/home.module.css";
 
 const Home = () => {
   const [preview, setPreview] = useState(false);
@@ -12,13 +13,14 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div style={styles}>
       <SplitScreen leftWeight={1} rightWeight={1}>
         <LeftHandComponent />
         <RightHandComponent />
       </SplitScreen>
+
       <button
-        className={preview ? "preview-true" : "preview-false"}
+        className={preview ? "previewTrue" : "previewFalse"}
         onClick={handlePreview}
       >
         Preview
