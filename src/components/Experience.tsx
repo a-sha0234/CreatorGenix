@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addForm } from "../redux/experience";
 import { store, RootState } from "../redux/store";
 import { v4 as uuidv4 } from "uuid";
+import { Heading, Button } from "../style/styles";
 
 export default function Experience() {
   const dispatch = useDispatch();
@@ -16,13 +17,13 @@ export default function Experience() {
 
   return (
     <div>
-      <h1>Experience</h1>
+      <Heading>Experience</Heading>
       <div>
         {experiences.form.map((data, index) => {
           return <ExperienceForm key={index} formkey={index} data={data} />;
         })}
       </div>
-      <button onClick={addForms}>+ New</button>
+      <Button onClick={addForms}>+ New</Button>
     </div>
   );
 }

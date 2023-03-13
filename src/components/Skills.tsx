@@ -3,6 +3,7 @@ import { store, RootState } from "../redux/store";
 import { addSkill, updateSkill, deleteSkill } from "../redux/skills";
 import SkillsForm from "./common/SkillsForm";
 import { v4 as uuidv4 } from "uuid";
+import { Heading } from "../style/styles";
 
 export default function Skills() {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ export default function Skills() {
 
   return (
     <div>
-      <h1>Skills</h1>
+      <Heading>Skills & Technolgies </Heading>
       {skills.form.map((data, index) => {
         return <SkillsForm id={data.uuid} formKey={index} />;
       })}

@@ -9,7 +9,25 @@ import {
   setSchoolCourse,
   setSchoolYearOfGraduation,
 } from "../redux/education";
-import { store, RootState } from "../redux/store";
+
+import styled from "styled-components";
+import { RootState } from "../redux/store";
+import { Input, Heading, SubHeading } from "../style/styles";
+
+const ContainerUni = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "universityNames" "universityCourse" "universityGrade" "yearOfGraduation";
+  row-gap: 5%;
+`;
+const ContainerSkl = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "schoolName" "schoolCourse" "yearOfGraduation";
+  row-gap: 7%;
+`;
 
 export default function Education() {
   const education = useSelector((state: RootState) => state.educationData);
@@ -40,49 +58,71 @@ export default function Education() {
 
   return (
     <div>
-      <h1>Education </h1>
-      <h2>University</h2>
-      <form>
-        <input
-          type="text"
-          name="universityNames"
-          onChange={setUniversityNames}
-          placeholder="university name"
-        ></input>
-        <input
-          name="universityCourse"
-          onChange={setUniversityCourses}
-          placeholder="course"
-        ></input>
-        <input
-          name="universityGrade"
-          onChange={setUniversityGrades}
-          placeholder="grade"
-        ></input>
-        <input
-          name="yearOfGraduation"
-          onChange={setUniversityyearOfGraduations}
-          placeholder="graduation date"
-        ></input>
-      </form>
-      <h2>School</h2>
-      <form>
-        <input
-          name="schoolName"
-          onChange={setSchoolNames}
-          placeholder="Name of school"
-        ></input>
-        <input
-          name="schoolCourse"
-          onChange={setSchoolCourses}
-          placeholder="courses"
-        ></input>
-        <input
-          name="yearOfGraduation"
-          onChange={setSchoolyearOfGraduations}
-          placeholder="finish date"
-        ></input>
-      </form>
+      <Heading>Education </Heading>
+
+      <div
+        style={{
+          maxWidth: "90%",
+          margin: "auto",
+          position: "relative",
+          bottom: "15px",
+        }}
+      >
+        <SubHeading>University</SubHeading>
+        <form>
+          <ContainerUni>
+            <Input
+              type="text"
+              name="universityNames"
+              onChange={setUniversityNames}
+              placeholder="university name"
+              gridArea="universityNames"
+            ></Input>
+            <Input
+              name="universityCourse"
+              onChange={setUniversityCourses}
+              placeholder="course"
+              gridArea="universityCourse"
+            ></Input>
+            <Input
+              name="universityGrade"
+              onChange={setUniversityGrades}
+              placeholder="grade"
+              gridArea="universityGrade"
+            ></Input>
+            <Input
+              name="yearOfGraduation"
+              onChange={setUniversityyearOfGraduations}
+              placeholder="graduation date"
+              gridArea="yearOfGraduation"
+            ></Input>
+          </ContainerUni>
+        </form>
+        <SubHeading>School</SubHeading>
+
+        <form>
+          <ContainerSkl>
+            <Input
+              name="schoolName"
+              onChange={setSchoolNames}
+              placeholder="Name of school"
+              gridArea="schoolName"
+            ></Input>
+            <Input
+              name="schoolCourse"
+              onChange={setSchoolCourses}
+              placeholder="courses"
+              gridArea="schoolCourse"
+            ></Input>
+            <Input
+              name="yearOfGraduation"
+              onChange={setSchoolyearOfGraduations}
+              placeholder="finish date"
+              gridArea="yearOfGraduation"
+            ></Input>
+          </ContainerSkl>
+        </form>
+      </div>
     </div>
   );
 }

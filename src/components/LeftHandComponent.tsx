@@ -5,14 +5,9 @@ import Experience from "./Experience";
 import Skills from "./Skills";
 import styles from "../style/leftHandComp/leftHandComp.module.css";
 import styled from "styled-components";
+import { Section } from "../style/styles";
 
 const Container = styled.main``;
-
-const Section = styled.div`
-  background-color: grey;
-  max-width: 70%;
-  margin-left: 4%;
-`;
 
 const LeftHandComponent = () => {
   return (
